@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>이력서 - 안태환</title>
   
-  <!-- 카카오톡 등 링크 공유 시 미리보기(OG) 설정 -->
   <meta property="og:title" content="이력서 - 안태환">
   <meta property="og:description" content="지원자 안태환의 이력서입니다.">
   <meta property="og:image" content="https://taehwan24.github.io/resume/og-image.png">
@@ -16,18 +15,13 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <style>
     :root {
-      /* 텍스트 컬러 */
-      --text-main: #191f28; 
+      var(--text-main): #191f28; 
       --text-sub: #333d4b;  
       --text-muted: #6b7684;
-      
-      /* 배경 및 보더 컬러 */
       --bg-card: #f9fafb;
       --border-color: #e5e8eb;
-      
-      /* 포인트 컬러 */
-      --accent: #3182f6;       /* 이메일, 전화번호 등 하이퍼링크 컬러 */
-      --accent-green: #0B3D2E; /* 지정해주신 다크 그린 컬러 (#0B3D2E) */
+      --accent: #3182f6;       
+      --accent-green: #0B3D2E; 
     }
     * {
       box-sizing: border-box;
@@ -48,7 +42,6 @@
       padding: 60px 24px 100px;
     }
     
-    /* --- 소개 영역 --- */
     .intro-section {
       display: flex;
       flex-direction: column-reverse;
@@ -84,6 +77,32 @@
       color: var(--text-main);
     }
     
+    /* --- 새로 추가된 포트폴리오 버튼 스타일 --- */
+    .portfolio-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    .btn-portfolio {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 16px;
+      background-color: var(--bg-card);
+      color: var(--accent-green);
+      border: 1px solid var(--accent-green);
+      border-radius: 8px;
+      font-size: 14.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .btn-portfolio:hover {
+      background-color: var(--accent-green);
+      color: #ffffff;
+    }
+    /* -------------------------------------- */
+
     .intro-photo img {
       width: 115px;
       height: 150px;
@@ -201,7 +220,6 @@
       text-decoration: underline;
     }
     
-    /* --- PDF 인쇄(Print) 버그 수정용 코드 --- */
     @media print {
       body {
         -webkit-print-color-adjust: exact;
@@ -209,6 +227,11 @@
       }
       .intro-photo img {
         box-shadow: none !important; 
+      }
+      /* PDF로 저장할 때 버튼의 테두리가 자연스럽게 나오도록 설정 */
+      .btn-portfolio {
+        border: 1px solid var(--accent-green) !important;
+        text-decoration: none !important;
       }
     }
   </style>
@@ -222,7 +245,15 @@
         <h1>안녕하세요,<br>지원자 <span>안태환</span>입니다.</h1>
         <p>데이터를 정돈하고 운영의 비효율을 개선하는 과정에서 즐거움을 느낍니다. 6개월간의 KINTEX 인턴십을 통해 복잡한 정산 엑셀을 단순화하고 꼼꼼하게 서류를 검토하며 실무 감각을 길렀습니다.</p>
         <p>비즈니스가 빠르고 안정적으로 굴러가기 위해서는 그 이면의 탄탄한 오퍼레이션이 필수적이라고 믿습니다. 아직은 배워가는 학생이지만, 새로운 시스템을 누구보다 빠르게 습득하고 팀의 빈틈을 확실하게 채워주는 조력자로 성장하고 싶습니다.</p>
+        
+        <!-- 첨부파일 버튼 영역 -->
+        <!-- href="" 안의 파일명을 실제 업로드한 파일명과 똑같이 맞춰주세요 -->
+        <div class="portfolio-links">
+          <a href="portfolio.pdf" target="_blank" class="btn-portfolio">📄 포트폴리오 보기 (PDF)</a>
+          <a href="excel_sample.xlsx" class="btn-portfolio">📊 정산/분석 엑셀 샘플 (Excel)</a>
+        </div>
       </div>
+      
       <div class="intro-photo">
         <img src="profile.JPG" alt="안태환 프로필 사진" />
       </div>
@@ -374,7 +405,6 @@
       <h2>Contact</h2>
       <ul class="contact-list">
         <li>Email: <a href="mailto:konteny2002@gmail.com">konteny2002@gmail.com</a></li>
-        <!-- 전화번호에도 하이퍼링크(tel:) 추가 -->
         <li>Phone: <a href="tel:010-3374-5258">010-3374-5258</a></li>
       </ul>
     </section>
