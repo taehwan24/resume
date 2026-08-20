@@ -9,7 +9,7 @@
   <style>
     :root {
       --text-main: #191f28; /* 아주 진한 검정색 (가독성 최상) */
-      --text-sub: #333d4b;  /* 기존보다 훨씬 어두운 진회색 */
+      --text-sub: #333d4b;  /* 어두운 진회색 */
       --text-muted: #6b7684;
       --bg-card: #f9fafb;
       --border-color: #e5e8eb;
@@ -33,53 +33,48 @@
       margin: 0 auto;
       padding: 60px 24px 100px;
     }
-    header {
-      margin-bottom: 40px;
-    }
-    .profile-header {
+    
+    /* --- 새롭게 바뀐 첫 소개 영역 --- */
+    .intro-section {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 24px;
-      gap: 20px;
+      flex-direction: column-reverse; /* 모바일에서는 사진이 위, 글이 아래 */
+      gap: 24px;
+      margin-bottom: 72px;
     }
-    .profile-info {
+    @media (min-width: 600px) {
+      .intro-section {
+        flex-direction: row; /* PC에서는 글이 왼쪽, 사진이 오른쪽 */
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+    }
+    .intro-text {
       flex: 1;
+      padding-right: 12px;
     }
-    .profile-img {
-      width: 110px;
-      height: 110px;
+    .intro-text h1 {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.4;
+      margin-bottom: 24px;
+      color: var(--text-main);
+    }
+    .intro-text p {
+      font-size: 16px;
+      line-height: 1.75;
+      margin-bottom: 16px;
+      color: var(--text-main);
+    }
+    .intro-photo img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       border: 1px solid var(--border-color);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
-    h1 {
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--text-main);
-      margin-bottom: 6px;
-    }
-    .subtitle {
-      font-size: 17px;
-      font-weight: 600;
-      color: var(--accent);
-    }
-    .summary-box {
-      background-color: var(--bg-card);
-      border-radius: 12px;
-      padding: 20px 24px;
-      font-size: 15px;
-      color: var(--text-main); /* 가독성을 위해 본문 검정색으로 변경 */
-      border-left: 4px solid var(--accent);
-      margin-bottom: 48px;
-    }
-    .summary-box strong {
-      color: var(--text-main);
-      display: block;
-      margin-bottom: 6px;
-      font-size: 16px;
-    }
+    /* -------------------------------- */
+
     section {
       margin-bottom: 52px;
     }
@@ -128,7 +123,7 @@
     }
     .desc {
       font-size: 14.5px;
-      color: var(--text-main); /* 가독성을 위해 본문 검정색으로 변경 */
+      color: var(--text-main);
       margin-bottom: 8px;
     }
     
@@ -141,9 +136,9 @@
     li {
       position: relative;
       font-size: 14.5px;
-      color: var(--text-main); /* 가독성을 위해 본문 검정색으로 변경 */
-      margin-bottom: 4px;
-      padding-left: 12px; /* 텍스트 시작 위치 미세 조정 */
+      color: var(--text-main); 
+      margin-bottom: 6px;
+      padding-left: 12px; /* 텍스트 시작 위치 */
     }
     li::before {
       content: "";
@@ -169,7 +164,7 @@
       padding: 0;
     }
     .contact-list li {
-      padding-left: 0; /* 연락처 리스트에는 기호 없음 */
+      padding-left: 0; 
     }
     .contact-list li::before {
       display: none; /* 연락처 리스트에는 기호 없음 */
@@ -187,18 +182,16 @@
 <body>
 
   <div class="container">
-    <header>
-      <div class="profile-header">
-        <div class="profile-info">
-          <h1>안태환</h1>
-          <div class="subtitle">Business Operator</div>
-        </div>
-        <img src="profile.JPG" alt="안태환 프로필 사진" class="profile-img" />
+    
+    <!-- 이현섭님 이력서 스타일을 참고한 모던한 소개 영역 -->
+    <header class="intro-section">
+      <div class="intro-text">
+        <h1>반갑습니다,<br>저는 안태환입니다.</h1>
+        <p>데이터를 정돈하고 운영의 비효율을 개선하는 과정에서 즐거움을 느낍니다. 6개월간의 KINTEX 인턴십을 통해 복잡한 정산 엑셀을 단순화하고 꼼꼼하게 서류를 검토하며 실무 감각을 길렀습니다.</p>
+        <p>비즈니스가 빠르고 안정적으로 굴러가기 위해서는 그 이면의 탄탄한 오퍼레이션이 필수적이라고 믿습니다. 아직은 배워가는 학생이지만, 새로운 시스템을 누구보다 빠르게 습득하고 팀의 빈틈을 확실하게 채워주는 조력자로 성장하고 싶습니다.</p>
       </div>
-      
-      <div class="summary-box">
-        <strong>비효율을 걷어내고 데이터를 시각화하여 운영 안정성을 만드는 오퍼레이터입니다.</strong>
-        6개월간 KINTEX 공간사업팀에서 인턴으로 근무하며, 기존의 복잡했던 정산 시트를 단순화하고 매출 분석 엑셀을 새롭게 도입하여 팀의 업무 능률을 크게 높였습니다. 반복되는 행정 서류 검토 속에서도 꼼꼼하게 누락과 이상치를 찾아냈으며, 이 성과를 인정받아 우수 현장실습생 표창을 수상했습니다. 엑셀을 다루는 능숙함과 새로운 시스템(ERP)에 대한 빠른 적응력을 바탕으로 토스페이먼츠의 가맹점 정보 및 KYC 운영을 빈틈없이 지원하겠습니다.
+      <div class="intro-photo">
+        <img src="profile.JPG" alt="안태환 프로필 사진" />
       </div>
     </header>
 
