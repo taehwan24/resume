@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>이력서 - 안태환</title>
   
+  <!-- 카카오톡 등 링크 공유 시 미리보기(OG) 설정 -->
   <meta property="og:title" content="이력서 - 안태환">
   <meta property="og:description" content="지원자 안태환의 이력서입니다.">
   <meta property="og:image" content="https://taehwan24.github.io/resume/og-image.png">
@@ -15,13 +16,18 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <style>
     :root {
+      /* 텍스트 컬러 */
       --text-main: #191f28; 
       --text-sub: #333d4b;  
       --text-muted: #6b7684;
+      
+      /* 배경 및 보더 컬러 */
       --bg-card: #f9fafb;
       --border-color: #e5e8eb;
-      --accent: #3182f6;       
-      --accent-green: #0B3D2E; 
+      
+      /* 포인트 컬러 */
+      --accent: #3182f6;       /* 이메일, 전화번호 등 하이퍼링크 컬러 */
+      --accent-green: #0B3D2E; /* 지정해주신 다크 그린 컬러 (#0B3D2E) */
     }
     * {
       box-sizing: border-box;
@@ -42,6 +48,7 @@
       padding: 60px 24px 100px;
     }
     
+    /* --- 소개 영역 --- */
     .intro-section {
       display: flex;
       flex-direction: column-reverse;
@@ -80,7 +87,7 @@
     .intro-photo img {
       width: 115px;
       height: 150px;
-      border-radius: 16px; 
+      border-radius: 16px; /* 라운드 직사각형 */
       object-fit: cover;
       border: 1px solid var(--border-color);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -172,12 +179,23 @@
       color: var(--accent-green);
     }
 
-    /* 포트폴리오 버튼 스타일 */
-    .portfolio-links {
+    /* --- 포트폴리오 버튼 및 설명 리스트 스타일 --- */
+    .portfolio-list {
       display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 16px;
+      flex-direction: column;
+      gap: 20px; /* 파일 묶음 사이의 간격 */
+      margin-top: 20px;
+    }
+    .portfolio-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px; /* 버튼과 설명글 사이의 간격 */
+    }
+    .portfolio-desc {
+      font-size: 14.5px;
+      color: var(--text-sub);
+      line-height: 1.6;
     }
     .btn-portfolio {
       display: inline-flex;
@@ -200,6 +218,7 @@
       font-size: 14px;
       color: var(--text-muted);
       margin-bottom: 12px;
+      line-height: 1.6;
     }
     .guide-text a {
       color: var(--accent);
@@ -208,6 +227,7 @@
     .guide-text a:hover {
       text-decoration: underline;
     }
+    /* -------------------------------------- */
 
     .contact-list {
       display: flex;
@@ -231,6 +251,7 @@
       text-decoration: underline;
     }
     
+    /* --- PDF 인쇄(Print) 버그 수정용 코드 --- */
     @media print {
       body {
         -webkit-print-color-adjust: exact;
@@ -243,6 +264,8 @@
         border: 1px solid var(--accent-green) !important;
         text-decoration: none !important;
       }
+      /* PDF 출력 시 불필요한 링크 안내 텍스트 숨김 처리 (선택사항) */
+      /* .guide-text { display: none; } */
     }
   </style>
 </head>
@@ -256,7 +279,6 @@
         <p>데이터를 정돈하고 운영의 비효율을 개선하는 과정에서 즐거움을 느낍니다. 6개월간의 KINTEX 인턴십을 통해 복잡한 정산 엑셀을 단순화하고 꼼꼼하게 서류를 검토하며 실무 감각을 길렀습니다.</p>
         <p>비즈니스가 빠르고 안정적으로 굴러가기 위해서는 그 이면의 탄탄한 오퍼레이션이 필수적이라고 믿습니다. 아직은 배워가는 학생이지만, 새로운 시스템을 누구보다 빠르게 습득하고 팀의 빈틈을 확실하게 채워주는 조력자로 성장하고 싶습니다.</p>
       </div>
-      
       <div class="intro-photo">
         <img src="profile.JPG" alt="안태환 프로필 사진" />
       </div>
@@ -404,15 +426,32 @@
       </div>
     </section>
 
-    <!-- 새롭게 추가된 포트폴리오 섹션 -->
+    <!-- 새롭게 분리된 포트폴리오 섹션 -->
     <section>
       <h2>Portfolio & Attachments</h2>
       <p class="guide-text">
-        ※ 본 이력서의 웹 버전(<a href="https://taehwan24.github.io/resume/" target="_blank">taehwan24.github.io/resume</a>)에 접속하시면 아래의 상세 포트폴리오 및 엑셀 산출물 샘플을 다운로드하실 수 있습니다.
+        ※ 본 이력서의 웹 버전(<a href="https://taehwan24.github.io/resume/" target="_blank">taehwan24.github.io/resume</a>)에 접속하시면 아래의 상세 포트폴리오 및 엑셀 산출물 샘플을 직접 다운로드하여 열람하실 수 있습니다.
       </p>
-      <div class="portfolio-links">
-        <a href="portfolio.pdf" target="_blank" class="btn-portfolio">📄 포트폴리오 보기 (PDF)</a>
-        <a href="excel_sample.xlsx" class="btn-portfolio">📊 정산/분석 엑셀 샘플 (Excel)</a>
+      
+      <div class="portfolio-list">
+        <!-- 1번 파일 -->
+        <div class="portfolio-item">
+          <a href="portfolio.pdf" target="_blank" class="btn-portfolio">📄 포트폴리오 보기 (PDF)</a>
+          <p class="portfolio-desc">6개월간의 KINTEX 인턴십 기간 동안 수행한 주요 업무와 성과를 상세히 요약한 문서입니다.</p>
+        </div>
+
+        <!-- 2번 파일 -->
+        <div class="portfolio-item">
+          <a href="excel_sample.xlsx" class="btn-portfolio">📊 정산 및 매출 분석 엑셀 (Excel)</a>
+          <p class="portfolio-desc">기존의 복잡했던 정산 방식을 단순화하고, 전시 일정과 연동하여 매출을 시각화한 엑셀 파일입니다. (민감 정보 블라인드 처리 완료)</p>
+        </div>
+        
+        <!-- 3번 파일 -->
+        <div class="portfolio-item">
+          <a href="extra_file.pdf" target="_blank" class="btn-portfolio">📎 기타 증빙 및 관리 서식 (PDF)</a>
+          <p class="portfolio-desc">상습 연체 업체를 효율적으로 트래킹하기 위해 기획했던 서식 등 기타 첨부 자료입니다.</p>
+        </div>
+        <!-- 4번 파일 추가 시 이 묶음을 통째로 복사해서 이어 붙이시면 됩니다 -->
       </div>
     </section>
 
