@@ -8,7 +8,7 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <style>
     :root {
-      /* 텍스트 컬러 (가독성 최상) */
+      /* 텍스트 컬러 */
       --text-main: #191f28; /* 아주 진한 검정색 */
       --text-sub: #333d4b;  /* 어두운 진회색 */
       --text-muted: #6b7684;
@@ -18,9 +18,8 @@
       --border-color: #e5e8eb;
       
       /* 포인트 컬러 */
-      --accent: #3182f6;       /* Toss Blue (링크 등 기본 강조) */
-      --accent-green: #023020; /* 세련된 Dark Green (제목, 주요 포인트 강조) */
-      --accent-green-light: rgba(2, 48, 32, 0.05); /* 다크 그린의 아주 옅은 배경색 */
+      --accent: #3182f6;       /* Toss Blue */
+      --accent-green: #2e7d32; /* 기존보다 조금 더 밝고 산뜻한 다크 그린 */
     }
     * {
       box-sizing: border-box;
@@ -41,16 +40,16 @@
       padding: 60px 24px 100px;
     }
     
-    /* --- 새롭게 바뀐 첫 소개 영역 --- */
+    /* --- 소개 영역 --- */
     .intro-section {
       display: flex;
-      flex-direction: column-reverse; /* 모바일에서는 사진이 위, 글이 아래 */
+      flex-direction: column-reverse;
       gap: 24px;
       margin-bottom: 72px;
     }
     @media (min-width: 600px) {
       .intro-section {
-        flex-direction: row; /* PC에서는 글이 왼쪽, 사진이 오른쪽 */
+        flex-direction: row;
         justify-content: space-between;
         align-items: flex-start;
       }
@@ -66,7 +65,6 @@
       margin-bottom: 24px;
       color: var(--text-main);
     }
-    /* "안태환입니다" 부분을 다크 그린으로 강조 */
     .intro-text h1 span {
       color: var(--accent-green);
     }
@@ -77,10 +75,12 @@
       margin-bottom: 16px;
       color: var(--text-main);
     }
+    
+    /* 사진 형태: 라운드가 둥근 직사각형 (비율 수정) */
     .intro-photo img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
+      width: 115px;
+      height: 150px;
+      border-radius: 16px; /* 둥근 모서리 직사각형 */
       object-fit: cover;
       border: 1px solid var(--border-color);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -93,7 +93,6 @@
     h2 {
       font-size: 22px;
       font-weight: 700;
-      /* 섹션 제목에 다크 그린 적용 */
       color: var(--accent-green);
       border-bottom: 2px solid var(--accent-green);
       padding-bottom: 8px;
@@ -128,17 +127,13 @@
       padding-left: 12px;
       border-left: 2px solid var(--border-color);
     }
-    /* 프로젝트 소제목에도 옅은 그린 배경 포인트 */
+    /* 소제목 디자인: 배경색 제거, 글씨만 포인트 색상 */
     .sub-title {
       display: inline-block;
       font-size: 16px;
       font-weight: 700;
       color: var(--accent-green);
-      background-color: var(--accent-green-light);
-      padding: 2px 8px;
-      border-radius: 4px;
-      margin-bottom: 8px;
-      margin-left: -8px; /* 들여쓰기 보정 */
+      margin-bottom: 4px;
     }
     .desc {
       font-size: 14.5px;
@@ -146,9 +141,9 @@
       margin-bottom: 8px;
     }
     
-    /* 작은 글머리 기호(점) 커스텀 디자인 - 다크 그린 적용 */
+    /* 작은 글머리 기호(점) */
     ul {
-      list-style-type: none; /* 기본 점 제거 */
+      list-style-type: none; 
       padding-left: 0;
       margin-bottom: 8px;
     }
@@ -157,16 +152,16 @@
       font-size: 14.5px;
       color: var(--text-main); 
       margin-bottom: 6px;
-      padding-left: 12px; /* 텍스트 시작 위치 */
+      padding-left: 12px;
     }
     li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 10px; /* 점의 수직 위치 */
-      width: 3.5px; /* 점 크기 축소 */
-      height: 3.5px; /* 점 크기 축소 */
-      background-color: var(--accent-green); /* 점 색상을 다크 그린으로 변경 */
+      top: 10px; 
+      width: 3.5px; 
+      height: 3.5px; 
+      background-color: var(--accent-green); 
       border-radius: 50%;
     }
 
@@ -175,7 +170,6 @@
       font-size: 13px;
       color: var(--text-muted);
     }
-    /* 강조하고 싶은 키워드용 (성과 등) */
     .highlight {
       font-weight: 600;
       color: var(--accent-green);
@@ -192,10 +186,10 @@
       padding-left: 0; 
     }
     .contact-list li::before {
-      display: none; /* 연락처 리스트에는 기호 없음 */
+      display: none; 
     }
     .contact-list li a {
-      color: var(--accent); /* 연락처 링크는 토스 블루 유지 */
+      color: var(--accent); 
       text-decoration: none;
       font-weight: 500;
     }
@@ -210,12 +204,11 @@
     
     <header class="intro-section">
       <div class="intro-text">
-        <h1>반갑습니다,<br>저는 <span>안태환</span>입니다.</h1>
+        <h1>안녕하세요,<br>지원자 <span>안태환</span>입니다.</h1>
         <p>데이터를 정돈하고 운영의 비효율을 개선하는 과정에서 즐거움을 느낍니다. 6개월간의 KINTEX 인턴십을 통해 복잡한 정산 엑셀을 단순화하고 꼼꼼하게 서류를 검토하며 실무 감각을 길렀습니다.</p>
         <p>비즈니스가 빠르고 안정적으로 굴러가기 위해서는 그 이면의 탄탄한 오퍼레이션이 필수적이라고 믿습니다. 아직은 배워가는 학생이지만, 새로운 시스템을 누구보다 빠르게 습득하고 팀의 빈틈을 확실하게 채워주는 조력자로 성장하고 싶습니다.</p>
       </div>
       <div class="intro-photo">
-        <!-- 프로필 사진 대소문자 확인 (profile.JPG 또는 profile.jpg) -->
         <img src="profile.JPG" alt="안태환 프로필 사진" />
       </div>
     </header>
@@ -231,7 +224,7 @@
         <div class="item-role">공간사업팀 인턴</div>
 
         <div class="sub-project">
-          <div class="sub-title">부대사업장(F&B, Office) 계약 및 행정 서류 검토</div>
+          <div class="sub-title">1. 부대사업장(F&B, Office) 계약 및 행정 서류 검토</div>
           <p class="desc">KINTEX 내 다수의 식음료(F&B) 및 오피스 입점사를 대상으로 계약 서류를 검토하고 행정 증빙 자료를 관리했습니다.</p>
           <ul>
             <li>입점 계약 시 필요한 사업자등록증, 영업신고증 등 필수 서류 유효성 검증 및 누락 서류 징구</li>
@@ -240,7 +233,7 @@
         </div>
 
         <div class="sub-project" style="margin-top: 24px;">
-          <div class="sub-title">임관리비 부과 엑셀 파일 재구성 및 단순화</div>
+          <div class="sub-title">2. 임관리비 부과 엑셀 파일 재구성 및 단순화</div>
           <p class="desc">여러 전임자를 거치며 계속 내용이 추가되어 보기 복잡하고 실수하기 쉬웠던 정산 파일을 현재 상황에 맞게 뜯어고쳤습니다.</p>
           <ul>
             <li>불필요한 시트들을 과감히 제거하고 복잡하게 꼬여 있던 수식을 단순화하여 파일 구조를 파악하기 쉽게 재설계</li>
@@ -249,7 +242,7 @@
         </div>
 
         <div class="sub-project" style="margin-top: 24px;">
-          <div class="sub-title">전시 일정 연동형 매장 매출 분석 파일 제작</div>
+          <div class="sub-title">3. 전시 일정 연동형 매장 매출 분석 파일 제작</div>
           <p class="desc">기존 매출 데이터 수집 방식으로는 주요 전시 일정에 따라 각 매장의 매출이 어떻게 달라지는지 한눈에 파악하기 어렵다는 문제를 개선했습니다.</p>
           <ul>
             <li>매장별·일자별 매출 데이터를 주요 전시 일정과 대조해서 볼 수 있는 분석 엑셀 파일을 새롭게 기획 및 제작</li>
@@ -259,7 +252,7 @@
         </div>
 
         <div class="sub-project" style="margin-top: 24px;">
-          <div class="sub-title">연체 업체 관리 및 ERP 회계 보조</div>
+          <div class="sub-title">4. 연체 업체 관리 및 ERP 회계 보조</div>
           <p class="desc">연체료를 제때 내지 않는 업체들을 따로 관리하고, 부서 내 필수적인 회계 처리 업무를 보조했습니다.</p>
           <ul>
             <li>상습 연체 업체를 관리하는 별도의 엑셀 파일을 만들어 미수금 현황을 꾸준히 업데이트하고, 유선 연락 및 공문을 발송해 납부 유도</li>
@@ -276,7 +269,7 @@
       
       <div class="item">
         <div class="item-header">
-          <div class="item-title">영락교회 대학부 (약 200명 규모)</div>
+          <div class="item-title">영락교회 대학부</div>
           <div class="item-period">2025. 11 - 2026. 08</div>
         </div>
         <div class="item-role">111대 학생회장</div>
@@ -307,33 +300,14 @@
           <li>부동산 시장 데이터 분석 및 공간 최적화 전략 수립</li>
         </ul>
       </div>
-    </section>
 
-    <section>
-      <h2>Awards & Honors</h2>
-      
+      <!-- 창업 경진대회 항목 합침 -->
       <div class="item">
         <div class="item-header">
-          <div class="item-title">2021 전국대학생 창업 아이디어 경진대회 우수상</div>
+          <div class="item-title">2021 전국대학생 창업 아이디어 경진대회</div>
           <div class="item-period">2021. 11</div>
         </div>
-        <div class="item-role">건국대학교</div>
-      </div>
-
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">프롭테크 아이디어톤 2021 특별상 (본선 진출)</div>
-          <div class="item-period">2021. 09</div>
-        </div>
-        <div class="item-role">한국프롭테크포럼</div>
-      </div>
-
-      <div class="item">
-        <div class="item-header">
-          <div class="item-title">21년도 1학기 우등 (Dean's List)</div>
-          <div class="item-period">2021. 07</div>
-        </div>
-        <div class="item-role">학업 성적 우수</div>
+        <div class="item-role">우수상 (건국대학교)</div>
       </div>
     </section>
 
