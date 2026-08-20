@@ -200,6 +200,19 @@
     .contact-list li a:hover {
       text-decoration: underline;
     }
+    
+    /* --- PDF 인쇄(Print) 버그 수정용 코드 --- */
+    @media print {
+      body {
+        /* 인쇄 시 색상이 빠지지 않도록 강제 적용 */
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .intro-photo img {
+        /* 인쇄할 때만 회색 박스의 원인인 그림자를 제거 */
+        box-shadow: none !important; 
+      }
+    }
   </style>
 </head>
 <body>
