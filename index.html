@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>이력서 - 안태환</title>
-  <!-- 토스 및 IT 기업 표준 폰트 (Pretendard) 로드 -->
+  <!-- Pretendard 폰트 로드 -->
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <style>
     :root {
@@ -36,17 +36,35 @@
     header {
       margin-bottom: 40px;
     }
+    /* 프로필 헤더 (이름/직무 + 사진 배치) */
+    .profile-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      gap: 20px;
+    }
+    .profile-info {
+      flex: 1;
+    }
+    .profile-img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%; /* 둥근 사각형을 원하시면 16px 로 변경 */
+      object-fit: cover;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
     h1 {
       font-size: 32px;
       font-weight: 800;
       color: var(--text-main);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .subtitle {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 600;
       color: var(--accent);
-      margin-bottom: 24px;
     }
     .summary-box {
       background-color: var(--bg-card);
@@ -150,8 +168,14 @@
 
   <div class="container">
     <header>
-      <h1>안태환</h1>
-      <div class="subtitle">Operations Enablement Assistant</div>
+      <div class="profile-header">
+        <div class="profile-info">
+          <h1>안태환</h1>
+          <div class="subtitle">Operations Enablement Assistant</div>
+        </div>
+        <!-- 대문자 JPG로 수정된 부분 -->
+        <img src="profile.JPG" alt="안태환 프로필 사진" class="profile-img" />
+      </div>
       
       <div class="summary-box">
         <strong>정확한 데이터 검수와 서류 관리를 통해 운영 효율을 만드는 오퍼레이터입니다.</strong>
