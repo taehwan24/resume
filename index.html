@@ -36,9 +36,10 @@
     }
     body {
       font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      font-size: 16px; /* 기본 폰트 사이즈 명시적 지정 */
       color: var(--text-main);
       background-color: #ffffff;
-      line-height: 1.7;
+      line-height: 1.75; /* 줄 간격 살짝 확대 */
       letter-spacing: -0.01em;
       word-break: keep-all;
     }
@@ -53,7 +54,7 @@
       display: flex;
       flex-direction: column-reverse;
       gap: 24px;
-      margin-bottom: 72px;
+      margin-bottom: 84px; /* 여백 확대 (기존 72px) */
     }
     @media (min-width: 600px) {
       .intro-section {
@@ -67,10 +68,10 @@
       padding-right: 12px;
     }
     .intro-text h1 {
-      font-size: 32px;
+      font-size: 34px; /* 폰트 확대 (기존 32px) */
       font-weight: 800;
       line-height: 1.4;
-      margin-bottom: 24px;
+      margin-bottom: 28px; /* 여백 확대 */
       color: var(--text-main);
     }
     .intro-text h1 span {
@@ -78,91 +79,91 @@
     }
     
     .intro-text p {
-      font-size: 16px;
-      line-height: 1.75;
-      margin-bottom: 16px;
+      font-size: 16.5px; /* 폰트 확대 (기존 16px) */
+      line-height: 1.8;
+      margin-bottom: 20px; /* 여백 확대 */
       color: var(--text-main);
     }
     
     .intro-photo img {
       width: 115px;
       height: 150px;
-      border-radius: 16px; /* 라운드 직사각형 */
+      border-radius: 16px; 
       object-fit: cover;
       border: 1px solid var(--border-color);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
 
     section {
-      margin-bottom: 52px;
+      margin-bottom: 64px; /* 섹션 간 여백 확대 (기존 52px) */
     }
     h2 {
-      font-size: 22px;
+      font-size: 23px; /* 폰트 확대 (기존 22px) */
       font-weight: 700;
       color: var(--accent-green);
       border-bottom: 2px solid var(--accent-green);
-      padding-bottom: 8px;
-      margin-bottom: 24px;
+      padding-bottom: 10px;
+      margin-bottom: 28px; /* 여백 확대 */
     }
     .item {
-      margin-bottom: 32px;
+      margin-bottom: 44px; /* 아이템 간 여백 확대 (기존 32px) */
     }
     .item-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       flex-wrap: wrap;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .item-title {
-      font-size: 18px;
+      font-size: 19px; /* 폰트 확대 (기존 18px) */
       font-weight: 700;
       color: var(--text-main);
     }
     .item-role {
-      font-size: 15px;
+      font-size: 15.5px; /* 폰트 확대 (기존 15px) */
       font-weight: 600;
       color: var(--text-sub);
     }
     .item-period {
-      font-size: 14px;
+      font-size: 14.5px;
       color: var(--text-muted);
     }
     .sub-project {
-      margin-top: 16px;
+      margin-top: 20px; /* 여백 확대 (기존 16px) */
       padding-left: 12px;
       border-left: 2px solid var(--border-color);
     }
     .sub-title {
       display: inline-block;
-      font-size: 16px;
+      font-size: 16.5px; /* 폰트 확대 (기존 16px) */
       font-weight: 700;
       color: var(--accent-green);
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .desc {
-      font-size: 14.5px;
+      font-size: 15px; /* 폰트 확대 (기존 14.5px) */
       color: var(--text-main);
-      margin-bottom: 8px;
+      margin-bottom: 12px; /* 여백 확대 */
     }
     
     ul {
       list-style-type: none; 
       padding-left: 0;
-      margin-bottom: 8px;
+      margin-bottom: 12px;
     }
     li {
       position: relative;
-      font-size: 14.5px;
+      font-size: 15px; /* 폰트 확대 (기존 14.5px) */
       color: var(--text-main); 
-      margin-bottom: 6px;
-      padding-left: 12px;
+      margin-bottom: 8px; /* 리스트 간 줄간격 확대 */
+      padding-left: 14px; /* 들여쓰기 미세 조정 */
     }
     li::before {
       content: "";
       position: absolute;
       left: 0;
-      top: 10px; 
+      top: 11px; /* 폰트가 커진 것에 맞춰 점 위치 미세 조정 */
       width: 3.5px; 
       height: 3.5px; 
       background-color: var(--accent-green); 
@@ -170,8 +171,8 @@
     }
 
     .tags {
-      margin-top: 12px;
-      font-size: 13px;
+      margin-top: 14px;
+      font-size: 13.5px;
       color: var(--text-muted);
     }
     .highlight {
@@ -183,29 +184,29 @@
     .portfolio-list {
       display: flex;
       flex-direction: column;
-      gap: 20px; /* 파일 묶음 사이의 간격 */
-      margin-top: 20px;
+      gap: 24px; /* 파일 묶음 사이의 간격 확대 */
+      margin-top: 24px;
     }
     .portfolio-item {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 8px; /* 버튼과 설명글 사이의 간격 */
+      gap: 10px; /* 버튼과 설명글 사이의 간격 확대 */
     }
     .portfolio-desc {
-      font-size: 14.5px;
+      font-size: 15px; /* 폰트 확대 */
       color: var(--text-sub);
       line-height: 1.6;
     }
     .btn-portfolio {
       display: inline-flex;
       align-items: center;
-      padding: 10px 16px;
+      padding: 11px 18px; /* 버튼 패딩 확대 */
       background-color: var(--bg-card);
       color: var(--accent-green);
       border: 1px solid var(--accent-green);
       border-radius: 8px;
-      font-size: 14.5px;
+      font-size: 15px; /* 폰트 확대 */
       font-weight: 600;
       text-decoration: none;
       transition: all 0.2s ease;
@@ -215,9 +216,9 @@
       color: #ffffff;
     }
     .guide-text {
-      font-size: 14px;
+      font-size: 14.5px;
       color: var(--text-muted);
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       line-height: 1.6;
     }
     .guide-text a {
@@ -264,8 +265,6 @@
         border: 1px solid var(--accent-green) !important;
         text-decoration: none !important;
       }
-      /* PDF 출력 시 불필요한 링크 안내 텍스트 숨김 처리 (선택사항) */
-      /* .guide-text { display: none; } */
     }
   </style>
 </head>
@@ -303,7 +302,8 @@
           </ul>
         </div>
 
-        <div class="sub-project" style="margin-top: 24px;">
+        <!-- HTML 인라인 스타일 여백도 24px -> 32px로 넓혔습니다. -->
+        <div class="sub-project" style="margin-top: 32px;">
           <div class="sub-title">2. 임관리비 부과 엑셀 파일 재구성 및 단순화</div>
           <p class="desc">여러 전임자를 거치며 계속 내용이 추가되어 보기 복잡하고 실수하기 쉬웠던 기존 임관리비 정산 파일을 활용하기 쉽도록 처음부터 뜯어고쳤습니다.</p>
           <ul>
@@ -312,7 +312,7 @@
           </ul>
         </div>
 
-        <div class="sub-project" style="margin-top: 24px;">
+        <div class="sub-project" style="margin-top: 32px;">
           <div class="sub-title">3. 전시 일정 연동형 매장 매출 분석 파일 제작</div>
           <p class="desc">기존 매출 데이터 수집 방식만으로는 주요 전시 일정에 따라 각 매장의 매출이 어떻게 달라지는지 한눈에 파악하기 어렵다는 문제를 개선했습니다.</p>
           <ul>
@@ -322,7 +322,7 @@
           </ul>
         </div>
 
-        <div class="sub-project" style="margin-top: 24px;">
+        <div class="sub-project" style="margin-top: 32px;">
           <div class="sub-title">4. 연체 업체 관리 및 ERP 회계 보조</div>
           <p class="desc">연체료를 제때 내지 않는 업체들을 따로 관리하고 대응했으며, 부서 내 필수적인 회계 처리 업무를 보조했습니다.</p>
           <ul>
@@ -452,13 +452,13 @@
       <div class="portfolio-list">
         <!-- 1번 파일 -->
         <div class="portfolio-item">
-          <a href="case_competition_im.pdf" target="_blank" class="btn-portfolio">제2회 부동산 Case Competition 투자제안서 제출물 (PDF)</a>
+          <a href="case_competition_im.pdf" target="_blank" class="btn-portfolio">📄 제2회 부동산 Case Competition 투자제안서 제출물 (PDF)</a>
           <p class="portfolio-desc">건국대학교 부동산학과에서 진행했던 제2회 Case Competition 대회에 제출한 투자제안서(IM) 결과물입니다.</p>
         </div>
 
         <!-- 2번 파일 -->
         <div class="portfolio-item">
-          <a href="case_competition_model.xlsx" class="btn-portfolio">제2회 부동산 Case Competition 재무모델 (Excel)</a>
+          <a href="case_competition_model.xlsx" class="btn-portfolio">📊 제2회 부동산 Case Competition 재무모델 (Excel)</a>
           <p class="portfolio-desc">Case Competition 대회의 문제 해결을 위하여 직접 설계하고 작성했던 실물 오피스 매입, 운영, 매각에 관한 재무모델입니다.</p>
         </div>
 
