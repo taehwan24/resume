@@ -26,8 +26,8 @@
       --border-color: #e5e8eb;
       
       /* 포인트 컬러 */
-      --accent: #3182f6;       
-      --accent-green: #0b3d2e; 
+      --accent: #3182f6;       /* 이메일, 전화번호 등 하이퍼링크 컬러 */
+      --accent-green: #0B3D2E; /* 지정해주신 다크 그린 컬러 (#0B3D2E) */
     }
     * {
       box-sizing: border-box;
@@ -204,12 +204,10 @@
     /* --- PDF 인쇄(Print) 버그 수정용 코드 --- */
     @media print {
       body {
-        /* 인쇄 시 색상이 빠지지 않도록 강제 적용 */
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
       .intro-photo img {
-        /* 인쇄할 때만 회색 박스의 원인인 그림자를 제거 */
         box-shadow: none !important; 
       }
     }
@@ -376,7 +374,8 @@
       <h2>Contact</h2>
       <ul class="contact-list">
         <li>Email: <a href="mailto:konteny2002@gmail.com">konteny2002@gmail.com</a></li>
-        <li>Phone: <span>010-3374-5258</span></li>
+        <!-- 전화번호에도 하이퍼링크(tel:) 추가 -->
+        <li>Phone: <a href="tel:010-3374-5258">010-3374-5258</a></li>
       </ul>
     </section>
   </div>
