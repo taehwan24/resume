@@ -8,12 +8,19 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <style>
     :root {
-      --text-main: #191f28; /* 아주 진한 검정색 (가독성 최상) */
+      /* 텍스트 컬러 (가독성 최상) */
+      --text-main: #191f28; /* 아주 진한 검정색 */
       --text-sub: #333d4b;  /* 어두운 진회색 */
       --text-muted: #6b7684;
+      
+      /* 배경 및 보더 컬러 */
       --bg-card: #f9fafb;
       --border-color: #e5e8eb;
-      --accent: #3182f6;
+      
+      /* 포인트 컬러 */
+      --accent: #3182f6;       /* Toss Blue (링크 등 기본 강조) */
+      --accent-green: #023020; /* 세련된 Dark Green (제목, 주요 포인트 강조) */
+      --accent-green-light: rgba(2, 48, 32, 0.05); /* 다크 그린의 아주 옅은 배경색 */
     }
     * {
       box-sizing: border-box;
@@ -59,6 +66,11 @@
       margin-bottom: 24px;
       color: var(--text-main);
     }
+    /* "안태환입니다" 부분을 다크 그린으로 강조 */
+    .intro-text h1 span {
+      color: var(--accent-green);
+    }
+    
     .intro-text p {
       font-size: 16px;
       line-height: 1.75;
@@ -81,8 +93,9 @@
     h2 {
       font-size: 22px;
       font-weight: 700;
-      color: var(--text-main);
-      border-bottom: 2px solid var(--text-main);
+      /* 섹션 제목에 다크 그린 적용 */
+      color: var(--accent-green);
+      border-bottom: 2px solid var(--accent-green);
       padding-bottom: 8px;
       margin-bottom: 24px;
     }
@@ -115,11 +128,17 @@
       padding-left: 12px;
       border-left: 2px solid var(--border-color);
     }
+    /* 프로젝트 소제목에도 옅은 그린 배경 포인트 */
     .sub-title {
+      display: inline-block;
       font-size: 16px;
       font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 4px;
+      color: var(--accent-green);
+      background-color: var(--accent-green-light);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      margin-left: -8px; /* 들여쓰기 보정 */
     }
     .desc {
       font-size: 14.5px;
@@ -127,7 +146,7 @@
       margin-bottom: 8px;
     }
     
-    /* 작은 글머리 기호(점) 커스텀 디자인 */
+    /* 작은 글머리 기호(점) 커스텀 디자인 - 다크 그린 적용 */
     ul {
       list-style-type: none; /* 기본 점 제거 */
       padding-left: 0;
@@ -147,7 +166,7 @@
       top: 10px; /* 점의 수직 위치 */
       width: 3.5px; /* 점 크기 축소 */
       height: 3.5px; /* 점 크기 축소 */
-      background-color: var(--text-main);
+      background-color: var(--accent-green); /* 점 색상을 다크 그린으로 변경 */
       border-radius: 50%;
     }
 
@@ -156,6 +175,12 @@
       font-size: 13px;
       color: var(--text-muted);
     }
+    /* 강조하고 싶은 키워드용 (성과 등) */
+    .highlight {
+      font-weight: 600;
+      color: var(--accent-green);
+    }
+
     .contact-list {
       display: flex;
       flex-wrap: wrap;
@@ -170,7 +195,7 @@
       display: none; /* 연락처 리스트에는 기호 없음 */
     }
     .contact-list li a {
-      color: var(--accent);
+      color: var(--accent); /* 연락처 링크는 토스 블루 유지 */
       text-decoration: none;
       font-weight: 500;
     }
@@ -183,14 +208,14 @@
 
   <div class="container">
     
-    <!-- 이현섭님 이력서 스타일을 참고한 모던한 소개 영역 -->
     <header class="intro-section">
       <div class="intro-text">
-        <h1>반갑습니다,<br>저는 안태환입니다.</h1>
+        <h1>반갑습니다,<br>저는 <span>안태환</span>입니다.</h1>
         <p>데이터를 정돈하고 운영의 비효율을 개선하는 과정에서 즐거움을 느낍니다. 6개월간의 KINTEX 인턴십을 통해 복잡한 정산 엑셀을 단순화하고 꼼꼼하게 서류를 검토하며 실무 감각을 길렀습니다.</p>
         <p>비즈니스가 빠르고 안정적으로 굴러가기 위해서는 그 이면의 탄탄한 오퍼레이션이 필수적이라고 믿습니다. 아직은 배워가는 학생이지만, 새로운 시스템을 누구보다 빠르게 습득하고 팀의 빈틈을 확실하게 채워주는 조력자로 성장하고 싶습니다.</p>
       </div>
       <div class="intro-photo">
+        <!-- 프로필 사진 대소문자 확인 (profile.JPG 또는 profile.jpg) -->
         <img src="profile.JPG" alt="안태환 프로필 사진" />
       </div>
     </header>
@@ -206,7 +231,7 @@
         <div class="item-role">공간사업팀 인턴</div>
 
         <div class="sub-project">
-          <div class="sub-title">1. 부대사업장(F&B, Office) 계약 및 행정 서류 검토</div>
+          <div class="sub-title">부대사업장(F&B, Office) 계약 및 행정 서류 검토</div>
           <p class="desc">KINTEX 내 다수의 식음료(F&B) 및 오피스 입점사를 대상으로 계약 서류를 검토하고 행정 증빙 자료를 관리했습니다.</p>
           <ul>
             <li>입점 계약 시 필요한 사업자등록증, 영업신고증 등 필수 서류 유효성 검증 및 누락 서류 징구</li>
@@ -214,8 +239,8 @@
           </ul>
         </div>
 
-        <div class="sub-project" style="margin-top: 20px;">
-          <div class="sub-title">2. 임관리비 부과 엑셀 파일 재구성 및 단순화</div>
+        <div class="sub-project" style="margin-top: 24px;">
+          <div class="sub-title">임관리비 부과 엑셀 파일 재구성 및 단순화</div>
           <p class="desc">여러 전임자를 거치며 계속 내용이 추가되어 보기 복잡하고 실수하기 쉬웠던 정산 파일을 현재 상황에 맞게 뜯어고쳤습니다.</p>
           <ul>
             <li>불필요한 시트들을 과감히 제거하고 복잡하게 꼬여 있던 수식을 단순화하여 파일 구조를 파악하기 쉽게 재설계</li>
@@ -223,8 +248,8 @@
           </ul>
         </div>
 
-        <div class="sub-project" style="margin-top: 20px;">
-          <div class="sub-title">3. 전시 일정 연동형 매장 매출 분석 파일 제작</div>
+        <div class="sub-project" style="margin-top: 24px;">
+          <div class="sub-title">전시 일정 연동형 매장 매출 분석 파일 제작</div>
           <p class="desc">기존 매출 데이터 수집 방식으로는 주요 전시 일정에 따라 각 매장의 매출이 어떻게 달라지는지 한눈에 파악하기 어렵다는 문제를 개선했습니다.</p>
           <ul>
             <li>매장별·일자별 매출 데이터를 주요 전시 일정과 대조해서 볼 수 있는 분석 엑셀 파일을 새롭게 기획 및 제작</li>
@@ -233,13 +258,13 @@
           </ul>
         </div>
 
-        <div class="sub-project" style="margin-top: 20px;">
-          <div class="sub-title">4. 연체 업체 관리 및 ERP 회계 보조</div>
+        <div class="sub-project" style="margin-top: 24px;">
+          <div class="sub-title">연체 업체 관리 및 ERP 회계 보조</div>
           <p class="desc">연체료를 제때 내지 않는 업체들을 따로 관리하고, 부서 내 필수적인 회계 처리 업무를 보조했습니다.</p>
           <ul>
             <li>상습 연체 업체를 관리하는 별도의 엑셀 파일을 만들어 미수금 현황을 꾸준히 업데이트하고, 유선 연락 및 공문을 발송해 납부 유도</li>
             <li>내부 ERP 시스템을 활용하여 입점사 매출 결의 및 지출 결의 등 각종 전표 입력 수행</li>
-            <li><strong>성과:</strong> 주도적인 업무 개선 및 꼼꼼한 관리 공로를 인정받아 <strong>'KINTEX 우수 현장실습생 표창'</strong> 수상 (2026. 02)</li>
+            <li><strong>성과:</strong> 주도적인 업무 개선 및 꼼꼼한 관리 공로를 인정받아 <span class="highlight">'KINTEX 우수 현장실습생 표창'</span> 수상 (2026. 02)</li>
           </ul>
           <div class="tags"><strong>Tools Used:</strong> Excel, ERP, Groupware</div>
         </div>
